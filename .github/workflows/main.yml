@@ -44,5 +44,5 @@ jobs:
           git fetch
           git checkout main
           git add ${{ env.scriptname }}
-          git commit -m "Automatic update of scripts"
+          git diff-index --quiet HEAD || git commit -m "Automatic update of scripts"
           git push
