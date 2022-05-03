@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: cchowthi/scripts
-          token: ${{ secrets.cchowthi_pat }}
+          token: ${{ secrets.global_pat }}
           path: scripts
           
       - name: Install Python 3
@@ -38,8 +38,8 @@ jobs:
         run: |
           cd scripts
           cp ../main/${{ env.scriptname }} ./
-          git config --global user.name "${{ secrets.my_name }}"
-          git config --global user.email  "${{ secrets.my_email }}"
+          git config --global user.name "${{ secrets.global_name }}"
+          git config --global user.email  "${{ secrets.global_email }}"
           git fetch
           git checkout main
           git add *gz
