@@ -5,7 +5,7 @@ on:
 
 jobs:
   validate:
-    if: github.repository != 'cchowthi/gilead_module_template'
+    if: github.repository != 'cchowthi/gilead_script_template'
     runs-on: ubuntu-latest
     
     strategy:
