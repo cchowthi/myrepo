@@ -1,11 +1,11 @@
-name: Run Python Tests
+name: CI - Run tests on updated script
 on:
   push:
-    branches:
-      - dev
+    branches: [ dev ]
 
 jobs:
   validate:
+    if: github.repository != 'cchowthi/gilead_module_template'
     runs-on: ubuntu-latest
     
     strategy:
@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Gilead-Biometrics-DataEngineering/gpythonvenv
-          token: ${{ secrets.my_pat }}
+          token: ${{ secrets.global_pat }}
           path: gpythonvenv
       
       - name: Set Up Python ${{ matrix.python-version }}
