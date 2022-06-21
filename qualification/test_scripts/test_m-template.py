@@ -17,16 +17,13 @@
 
 import os
 #import pytest
-#from puts import puts
+
 
 # =============================================================================
 # Define tests below
 # =============================================================================
-#@pytest.mark.parametrize('fix_test',
-#                          [['path/to/file1',
-#                           'path/to/file2']],
-#                          indirect=True)
-def test_ur1(fix_test):
+
+def test_ur1():
 
     """ User Requirement 1: 
     Description here  """ # (2) User Requirement Description
