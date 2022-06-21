@@ -1,18 +1,12 @@
-# This is a basic workflow to help you get started with Actions 
-
-name: CI/CD
-
-# Controls when the workflow will run
+name: CD - Package and load to master repo
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
 
 # Define name of script
 env:
-  scriptname: some_script.py
+  scriptname: script_name.py
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel.
 jobs:
   build:
     if: github.repository != 'cchowthi/gilead_script_template'
