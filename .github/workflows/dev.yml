@@ -35,6 +35,7 @@ jobs:
           cp m-mkvenv/gpythonvenv_requirements.txt dev/
           python -m pip install --upgrade pip
           pip install -r dev/gpythonvenv_requirements.txt
+          find m-mkvenv/dist/ -maxdepth 1 -name '*gz' | xargs -I {} pip install {}
           
       - name: Run tests with pytest
         run: |
