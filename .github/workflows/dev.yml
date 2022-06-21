@@ -21,9 +21,9 @@ jobs:
       - name: Get requirements
         uses: actions/checkout@v2
         with:
-          repository: Gilead-Biometrics-DataEngineering/gpythonvenv
+          repository: cchowthi/m-mkvenv
           token: ${{ secrets.global_pat }}
-          path: gpythonvenv
+          path: m-mkvenv
       
       - name: Set Up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
@@ -32,9 +32,9 @@ jobs:
           
       - name: Install dependencies
         run: |
-          cp gpythonvenv/requirements.txt .dev/
+          cp m-mkvenv/gpythonvenv_requirements.txt .dev/
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r gpythonvenv_requirements.txt
           
       - name: Run tests with pytest
         run: |
